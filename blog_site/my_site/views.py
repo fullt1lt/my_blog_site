@@ -5,17 +5,16 @@ def about(request):
     return HttpResponse("надає звичайний текст для користувача, що описує функції сайту django.")
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
-def article(request, article_id):
-    return HttpResponse(f"Представлення деталей однієї статті. URL містить динамічну частину. Вона буде використовуватися для отримання однієї статті з бази даних #{article_id}.")
+def article(request):
+    return render(request, 'article.html')
 
 def article_comment(request, article_id):
     return HttpResponse(f"Це представлення буде використовуватися для додавання коментарів до статті. #{article_id}.")
 
 def create(request):
     return HttpResponse("Форма створення статті.")
-
 
 def article_update(request, article_id):
     return HttpResponse(f"Представлення для оновлення існуючих даних статті #{article_id}.")
@@ -54,17 +53,7 @@ def register(request):
     return HttpResponse(f"Сторінка з формою для реєстрації нового користувача.")
 
 def login(request):
-    return HttpResponse(f"Сторінка з формою для логіна.")
+    return render(request, 'login.html')
 
 def logout(request):
     return HttpResponse(f"Логаут. Має перенаправляти користувача назад на домашню сторінку..")
-
-
-
-
-
-def test(request):
-    return render(request, 'test.html')
-
-def contacts(request):
-    return render(request, 'contacts.html')

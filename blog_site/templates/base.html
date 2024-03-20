@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title{%block title%}{%endblock%}</title>
+    {%block style %}
+    {% endblock %}
+    <title>My blog site</title>
 </head>
 <body>
-<div>
-    It's BASE
-</div>
+<header>
+    {%block header%}
+    {%endblock%}
+</header>
 <div style="background-color: aqua">
     {% block content %}
     {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block style %}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+{% endblock %}
+{%block header%}
+<ul class="header_list">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'article' %}">Articles</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+    <li><a href="{% url 'home' %}">Logout</a></li>
+</ul>
+{%endblock%}
+
+{% block content %}
+            <div style="padding: 20px; background-color: chocolate"> Тут будут все статьи</div>
+{% endblock %}
