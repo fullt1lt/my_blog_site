@@ -1,11 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from my_site.models import Article
+
 def about(request):
     return HttpResponse("надає звичайний текст для користувача, що описує функції сайту django.")
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {
+        'articles': Article.objects.all()
+    })
 
 def article(request):
     return render(request, 'article.html')

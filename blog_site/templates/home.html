@@ -15,5 +15,15 @@
 
 
 {% block content %}
-    тут Будут все блоги!!!!
+    <ul class="article_list">
+        {% for article in articles %}
+        <ul>
+            {% for topic in article.topic.all %}
+                <p> {{topic.title}}</p>
+            {% endfor %}
+            <li>{{article.title}} created at {{article.date_of_create}}</li>
+            <li>{{article.text}}</li>
+        </ul>
+        {% endfor %}
+    </ul>
 {% endblock %}
